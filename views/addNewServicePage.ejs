@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/AddNewServicePage_style.css">
+    <link href="https://fonts.googleapis.com/css?family=Muli" rel="stylesheet">
+    <title>AddNewServicePage</title>
+</head>
+<body>
+<div class="row">
+    <form action="/new_service" method="post">
+        <div>
+            <label for="title" class="title">Название услуги</label>
+            <input type="text" id="title" name="title" maxlength="30" minlength="3"/>
+        </div>
+        <div>
+            <label for="cost" class="title">Стоймость услуги</label>
+            <input type="text" id="cost" name="cost" maxlength="5" minlength="2"/>
+        </div>
+        <div>
+            <label for="image" class="title">Загрузите изображение</label>
+            <input type="file" id="image" name="image"/>
+        </div>
+        <div>
+            <label for="description" class="title">Описание услуги</label>
+            <textarea name="description" id="description" cols="30" rows="7" minlength="3" maxlength="150"></textarea>
+        </div>
+        <button style="margin: 0 0 20px 10px;float: left; width: 130px;" onclick="back()">Назад</button>
+        <button style="margin: 0 10px 20px 0;float: right; width: 130px;" onclick="correct()">Подтвердить</button>
+    </form>
+</div>
+
+<script>
+  function back() {
+    fetch(`/adminPage`, {method: 'GET'}).then(response => {
+      location.href = "/adminPage";
+    })
+  }
+
+  function correct() {
+    //let formdata = new FormData();
+    let title = document.getElementById('title').value;
+    let cost = document.getElementById('cost').value;
+    let image = document.getElementById('image').value;
+    let description = document.getElementById('description').value;
+    if (!title) alert('Text is empty!');
+    if (isNumeric(cost)) alert('Cost is not number!');
+    if (image[image.length - 1] !== 'jpg' || image[image.length - 1] !== 'png') alert('Image has wrong format!');
+    if (!description) alert('Description is empty');
+    /*formdata.append('', id);
+    fetch(`/deleteService/${id}`, {body: formdata, method: 'DELETE'}).then(response => {
+      location.href = "/selectServices";
+    })
+    location.href = "/selectServices";*/
+  }
+
+  function isNumeric(n) {
+    return !isNaN(parseFloat(n)) && isFinite(n);
+  }
+
+</script>
+</body>
+</html>

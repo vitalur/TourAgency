@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<section>
+    <h2 class="text-center">Your Services</h2>
+    <div class="row no-gutters">
+        <% for (let i = 0; i < posts.length; i++) { %>
+        <div class="col-sm-3 ftco-animate fadeInUp ftco-animated">
+            <a href="/service/<%= posts[i].id %>" class="block-5" style="background-image: url(<%= "images/" + posts[i].pic %>);">
+                <div class="text text-bottom text-animate">
+                    <span class="price">$<%= posts[i].cost %></span>
+                    <h3 class="heading"><%= posts[i].title %></h3>
+                    <p><%= posts[i].description %></p>
+                </div>
+            </a>
+        </div>
+        <% } %>
+    </div>
+</section>
+</body>
+</html>

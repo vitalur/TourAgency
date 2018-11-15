@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/single_service_style.css">
+    <link href="https://fonts.googleapis.com/css?family=Muli" rel="stylesheet">
+    <title>Post <%= post[0].id %></title>
+</head>
+<body>
+<div style="background-image: url(<%= "../images/" + post[0].pic %>);" class="head">
+    <div class="container">
+        <div class="row">
+            <div class="white_block">
+                <h3><input id="title" type="text" value="<%= post[0].title %>" maxlength="30" minlength="3"></h3>
+                <input type="file" value="(Изображение на заднем фоне)" id="image">
+                <p>Стоимость услуги <input id="cost" value="<%= post[0].cost %>" maxlength="5" minlength="2"> $</p>
+                <p>Описание услуги</p>
+                <textarea id="description" cols="60" rows="5" placeholder="<%= post[0].description %>" minlength="3" maxlength="150"></textarea>
+                <div class="action">
+                    <button onclick="back()">Назад</button>
+                    <button onclick="update()">Редактировать</button>
+                    <button onclick="remove(<%= post[0].id %>)">Удалить</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+  function back() {
+    fetch(`/selectServices`, {method: 'GET'}).then(response => {
+      location.href = "/selectServices";
+    })
+  }
+
+  function update() {
+    const obj = {};
+    let link = location.href.split('/');
+    let id = link[link.length - 1];
+    let title = document.getElementById('title').value,
+      cost = document.getElementById('cost').value,
+      image = document.getElementById('image').value,
+      description = document.getElementById('description').value;
+    // alert(title + ' ' + cost + ' ' + image + ' ' + description);
+    obj.id = id;
+    obj.title = title;
+    obj.cost = cost;
+    obj.image = image;
+    obj.description = description;
+    fetch(`/updateService`, {body: JSON.stringify(obj), method: 'POST', headers: {"Content-type": 'application/json'}}).
+    then(response => {
+      return response.json()
+    }).then(body => {
+      console.log(body);
+      alert(body)
+    });
+    location.href = "/selectServices";
+  }
+
+  function remove(id) {
+    let formdata = new FormData();
+    formdata.append('id', id);
+    console.log(formdata.get('id'));
+    fetch(`/deleteService/${id}`, {body: formdata, method: 'DELETE'}).then(response => {
+      location.href = "/selectServices";
+    })
+    location.href = "/selectServices";
+  }
+</script>
+
+</body>
+</html>

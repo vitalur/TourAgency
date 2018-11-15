@@ -1,0 +1,181 @@
+* {
+	box-sizing: border-box;
+}
+
+div {
+	display: block;
+}
+
+a {
+	transition: .3s all ease;
+	text-decoration: none;
+	background-color: transparent;
+	cursor: pointer;
+}
+
+body {
+	font-family: "Muli", Arial, sans-serif;
+    background: #fff;
+    font-size: 16px;
+    line-height: 1.8;
+    font-weight: 300;
+    color: gray;
+}
+
+.head {   
+/* Местоположение фоновой картинки */ 
+   background-image: url(../images/bg_1.jpg);      
+/* Фоновое изображение выровнено по центру в горизонтальной и вертикальной плоскостях */ 
+   background-position: center center;      
+/* Фон не повторяется */
+   background-repeat: no-repeat;      
+/* Фон зафиксирован в области просмотра и потому не двигается, когда высота контента превышает высоту изображения */
+  /* background-attachment: fixed;      
+/* Это свойство заставляет фон менять масштаб при изменении размеров содержащего его контейнера*/
+   background-size: cover;      
+/* Цвет фона, который будет отображаться при загрузке фоновой картинки*/ 
+   background-color: #464646; 
+   padding: 20px 0 600px;
+   color: red;
+}
+
+.navigation {
+	margin-top: 16px;
+}
+
+.navigation a:hover {
+	text-decoration: none;
+	color: red;
+	border-bottom: 1px solid red;
+}
+
+.tours {
+	margin: 80px 0;
+}
+
+.promo-img {
+	display: block;
+	height: 200px;
+	width: 200px;
+	margin: 0 auto; 
+	position: relative;
+	border-radius: 50%;
+	box-shadow: 0px 10px 59px -27px black;
+}
+.promo {
+	background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+.text {
+	font-family: "Muli", Arial, sans-serif;
+	margin-top: 30px;
+	color: #000;
+}
+
+.text-center {
+	text-align: center;
+	padding: 40px 0;
+}
+.text-bottom {
+	position: absolute; 
+	bottom: 20px;
+	padding-left: 20px;
+	padding-top: 20px;
+}
+.text h2 {
+	font-size: 20px;
+}
+.price {
+	font-size: 18px;
+	color: #000;
+}
+.price span {
+	color: #999;
+}
+
+.read {
+	color: #B02D37;
+}
+
+.destination {
+	margin: 120px 0;
+}
+.no-gutters {
+	margin-right: 0;
+	margin-left: 0;
+}
+
+.block-5 {
+	overflow: hidden;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center center;
+	height: 400px;
+	width: 100%;
+	position: relative;
+	display: block;
+}
+
+.col-1, .col-2, .col-3, .col-4, .col-5, 
+.col-6, .col-7, .col-8, .col-9, .col-10,
+.col-11, .col-12, .col, .col-auto, .col-sm-1,
+.col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5,
+.col-sm-6, .col-sm-7, .col-sm-8, .col-sm-9,
+.col-sm-10, .col-sm-11, .col-sm-12, .col-sm,
+.col-sm-auto, .col-md-1, .col-md-2, .col-md-3,
+.col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8,
+.col-md-9, .col-md-10, .col-md-11, .col-md-12, .col-md, 
+.col-md-auto, .col-lg-1, .col-lg-2, .col-lg-3, .col-lg-4,
+.col-lg-5, .col-lg-6, .col-lg-7, .col-lg-8, .col-lg-9,
+.col-lg-10, .col-lg-11, .col-lg-12, .col-lg, .col-lg-auto,
+.col-xl-1, .col-xl-2, .col-xl-3, .col-xl-4, .col-xl-5,
+.col-xl-6, .col-xl-7, .col-xl-8, .col-xl-9, .col-xl-10,
+.col-xl-11, .col-xl-12, .col-xl, .col-xl-auto {
+    position: relative;
+    width: 100%;
+    min-height: 1px;
+    padding-right: 15px;
+    padding-left: 15px;
+}    
+
+.heading {
+	font-size: 20px;
+	color: #000;
+	margin-bottom: 17px;
+}
+.text-animate {
+	width: 100%;
+	height: 200px;
+	position: absolute;
+	bottom: -100px;
+	transition: .5s ease-in;
+}
+.text-animate:before {
+	width: 100%;
+	height: 100px;
+	position: absolute;
+	bottom: 200px;
+}
+.text-animate:hover {
+	bottom: 0;
+	background-color: #fff;
+}
+
+.foot {
+	padding: 60px 0;
+	background-color: #f9aa88;
+}
+
+.icon-img {
+	display: block;
+	height: 30px;
+	width: 30px;
+	background-color: #fff;
+	margin: 0 auto 10px auto; 
+	position: relative;
+	border-radius: 50%;
+	box-shadow: 0px 10px 59px -27px black;
+
+}

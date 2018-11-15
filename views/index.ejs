@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+
+    <link href="https://fonts.googleapis.com/css?family=Muli" rel="stylesheet">
+    <title>Hello, world!</title>
+</head>
+<body>
+
+
+<header>
+    <div class="head">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-2">
+                    <h1>Tour</h1>
+                </div>
+                <div class="col-sm-4"></div>
+                <div class="col-sm-6">
+                    <ul class="list-inline navigation">
+                        <li class="list-inline-item col-sm-2"><a href="#" class="read">Home</a></li>
+                        <li class="list-inline-item col-sm-2"><a href="#" class="read">Services</a></li>
+                        <li class="list-inline-item col-sm-2"><a href="#" class="read">Home</a></li>
+                        <li class="list-inline-item col-sm-2"><a href="#" class="read">Home</a></li>
+                        <li class="list-inline-item col-sm-2"><a href="/conect" class="read">Admin</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<section class="tours">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-3">
+                <a href="#" class="promo-img promo" style="background-image: url(images/bg_2.jpg);"></a>
+                <div class="text text-center">
+                    <h2>Group cruises</h2>
+                    <h3 class="price">
+                        <span>from</span> $399
+                    </h3>
+                    <a href="#" class="read">READ MORE</a>
+                </div>
+
+            </div>
+
+            <div class="col-sm-3">
+                <a href="#" class="promo-img promo" style="background-image: url(images/bg_3.jpg);"></a>
+                <div class="text text-center">
+                    <h2>Group cruises</h2>
+                    <h3 class="price">
+                        <span>from</span> $399
+                    </h3>
+                    <a href="#" class="read">READ MORE</a>
+                </div>
+            </div>
+
+            <div class="col-sm-3">
+                <a href="#" class="promo-img promo" style="background-image: url(images/bg_4.jpg);"></a>
+                <div class="text text-center">
+                    <h2>Group cruises</h2>
+                    <h3 class="price">
+                        <span>from</span> $399
+                    </h3>
+                    <a href="#" class="read">READ MORE</a>
+                </div>
+            </div>
+
+            <div class="col-sm-3">
+                <a href="#" class="promo-img promo" style="background-image: url(images/bg_5.jpg);"></a>
+                <div class="text text-center">
+                    <h2>Group cruises</h2>
+                    <h3 class="price">
+                        <span>from</span> $399
+                    </h3>
+                    <a href="#" class="read">READ MORE</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="destination">
+    <h2 class="text-center">Most popular destination</h2>
+    <div class="row no-gutters">
+        <% for (let i = 0; i < posts.length; i++) { %>
+        <div class="col-sm-3 ftco-animate fadeInUp ftco-animated">
+            <a href="/service/<%= posts[i].id %>" class="block-5" style="background-image: url(<%= "images/" + posts[i].pic %>);">
+                <div class="text text-bottom text-animate">
+                    <span class="price">$<%= posts[i].cost %></span>
+                    <h3 class="heading"><%= posts[i].title %></h3>
+                    <p><%= posts[i].description %></p>
+                </div>
+            </a>
+        </div>
+        <% } %>
+    </div>
+</section>
+
+<footer class="foot">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-1"></div>
+            <div class="col-sm-3">
+                <p>Tour Fellow Tourist<br>
+                    Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live
+                    the blind texts.
+                </p>
+            </div>
+            <div class="col-sm-2"></div>
+            <div class="col-sm-3">Contact Information
+                West Street, Suite 555 New York
+                + 1234 56 78 999
+                info@your.com
+                email@email.com
+            </div>
+            <div class="col-sm-3">
+                <a href="#" class="icon-img promo" style="background-image: url(images/twitter_bird.png);"></a>
+                <a href="#" class="icon-img promo" style="background-image: url(images/linkedin.png);"></a>
+                <a href="#" class="icon-img promo" style="background-image: url(images/facebook.png);"></a>
+                <a href="#" class="icon-img promo" style="background-image: url(images/pinterest.png);"></a>
+            </div>
+        </div>
+        <p class="text-center">Create by Vital</p>
+    </div>
+</footer>
+
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="js/jquery-3.3.1.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+</body>
+</html>

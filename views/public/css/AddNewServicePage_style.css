@@ -1,0 +1,40 @@
+* {
+	box-sizing: border-box;
+}
+
+body {
+  background-color: #00aa88;
+}
+
+form {
+  margin: 100px auto;
+  background-color: #ffffff;
+  opacity: 0.8;
+}
+
+div {
+  margin: 10px;
+  padding-bottom: 10px;
+  width: 100%;
+}
+
+input {
+  width: 290px;
+  border-radius: 5px;
+  padding: 5px;
+}
+
+textarea {
+  padding: 5px;
+}
+
+.title {
+  float: left;
+  width: 200px;
+  padding-bottom: 10px;
+  padding-right: 10px;
+}
+
+button {
+  border-radius: 8px;
+}
